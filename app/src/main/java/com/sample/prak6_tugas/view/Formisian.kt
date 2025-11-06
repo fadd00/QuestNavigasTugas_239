@@ -140,6 +140,24 @@ fun FormDataDiri(
                     }
                 }
             }
+            Spacer(modifier = Modifier.height(24.dp))
+
+            Text(
+                text = "ALAMAT",
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.align(Alignment.Start)
+            )
+
+            OutlinedTextField(
+                value = textAlamat,
+                singleLine = true,
+                shape = MaterialTheme.shapes.large,
+                modifier = Modifier.fillMaxWidth(),
+                label = { Text(text = "Alamat Lengkap") },
+                onValueChange = {
+                    textAlamat = it
+                }
+            )
         }
     }
 }
