@@ -8,6 +8,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.sample.prak6_tugas.view.TampilData
+import com.sample.prak6_tugas.view.HomePage
+import com.sample.prak6_tugas.view.FormDataDiri
 
 
 enum class navigasi {
@@ -24,31 +27,31 @@ fun DataApp(
     Scaffold { isiRuang->
         NavHost(
             navController = navController,
-            startDestination = com.sample.prak6_tugas..navigasi.Home.name,
+            startDestination = navigasi.Home.name,
             modifier = modifier.padding(isiRuang)
         ) {
-            composable(route = com.sample.prak6_tugas..navigasi.Home.name) {
+            composable(route = navigasi.Home.name) {
                 HomePage(
                     onNavigateToForm = {
-                        navController.navigate(com.sample.prak6.navigasi.Formulir.name)
+                        navController.navigate(navigasi.Formulir.name)
                     }
                 )
             }
-            composable(route = com.sample.prak6_tugas..navigasi.Formulir.name) {
+            composable(route = navigasi.Formulir.name) {
                 FormDataDiri(
                     onSubmitClick = {
-                        navController.navigate(com.sample.prak6.navigasi.Detail.name)
+                        navController.navigate(navigasi.Detail.name)
                     }
                 )
             }
-            composable(route = com.sample.prak6_tugas..navigasi.Detail.name) {
+            composable(route = navigasi.Detail.name) {
                 TampilData(
                     OnBackBtnClick = {
                         cancelAndBackToFormulir(navController)
                     },
                     onBackToHomeClick = {
-                        navController.navigate(com.sample.prak6.navigasi.Home.name) {
-                            popUpTo(com.sample.prak6_tugas..navigasi.Home.name) { inclusive = true }
+                        navController.navigate(navigasi.Home.name) {
+                            popUpTo(navigasi.Home.name) { inclusive = true }
                         }
                     }
                 )
@@ -58,8 +61,9 @@ fun DataApp(
 
         }
 }
+
 private fun cancelAndBackToFormulir(
     navController: NavHostController
 ){
-    navController.popBackStack(com.sample.prak6_tugas..navigasi.Formulir.name, inclusive = false)
+    navController.popBackStack(navigasi.Formulir.name, inclusive = false)
 }
