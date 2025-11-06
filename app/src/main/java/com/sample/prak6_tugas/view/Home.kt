@@ -3,6 +3,7 @@ package com.sample.prak6_tugas.view
 import android.widget.Space
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -66,6 +67,16 @@ fun HomePage(
                 color = MaterialTheme.colorScheme.primary,
                 textAlign = TextAlign.Center
             )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(
+                text = "Aplikasi Formulir Pendaftaran",
+                fontSize = 18.sp,
+                color = Color.Gray,
+                textAlign = TextAlign.Center
+            )
+
         }
     }
 }
