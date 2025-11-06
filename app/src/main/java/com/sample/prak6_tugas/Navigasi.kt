@@ -1,5 +1,7 @@
 package com.sample.prak6_tugas
 
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
@@ -14,5 +16,21 @@ fun DataApp(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController()
 ){
+    Scaffold { isiRuang->
+        NavHost(
+            navController = navController,
+            startDestination = com.sample.prak6.navigasi.Home.name,
+            modifier = modifier.padding(isiRuang)
+        ) {
+            composable(route = com.sample.prak6.navigasi.Home.name) {
+                HomePage(
+                    onNavigateToForm = {
+                        navController.navigate(com.sample.prak6.navigasi.Formulir.name)
+                    }
+                )
+            }
 
+        }
+
+        }
 }
