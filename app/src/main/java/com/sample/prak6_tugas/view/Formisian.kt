@@ -114,6 +114,13 @@ fun FormDataDiri(
                     }
                 }
             }
+            Spacer(modifier = Modifier.height(24.dp))
+
+            Text(
+                text = "STATUS PERKAWINAN",
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.align(Alignment.Start)
+            )
         }
     }
 }
