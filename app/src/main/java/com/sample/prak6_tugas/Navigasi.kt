@@ -24,31 +24,31 @@ fun DataApp(
     Scaffold { isiRuang->
         NavHost(
             navController = navController,
-            startDestination = com.sample.prak6.navigasi.Home.name,
+            startDestination = com.sample.prak6_tugas..navigasi.Home.name,
             modifier = modifier.padding(isiRuang)
         ) {
-            composable(route = com.sample.prak6.navigasi.Home.name) {
+            composable(route = com.sample.prak6_tugas..navigasi.Home.name) {
                 HomePage(
                     onNavigateToForm = {
                         navController.navigate(com.sample.prak6.navigasi.Formulir.name)
                     }
                 )
             }
-            composable(route = com.sample.prak6.navigasi.Formulir.name) {
+            composable(route = com.sample.prak6_tugas..navigasi.Formulir.name) {
                 FormDataDiri(
                     onSubmitClick = {
                         navController.navigate(com.sample.prak6.navigasi.Detail.name)
                     }
                 )
             }
-            composable(route = com.sample.prak6.navigasi.Detail.name) {
+            composable(route = com.sample.prak6_tugas..navigasi.Detail.name) {
                 TampilData(
                     OnBackBtnClick = {
                         cancelAndBackToFormulir(navController)
                     },
                     onBackToHomeClick = {
                         navController.navigate(com.sample.prak6.navigasi.Home.name) {
-                            popUpTo(com.sample.prak6.navigasi.Home.name) { inclusive = true }
+                            popUpTo(com.sample.prak6_tugas..navigasi.Home.name) { inclusive = true }
                         }
                     }
                 )
@@ -61,5 +61,5 @@ fun DataApp(
 private fun cancelAndBackToFormulir(
     navController: NavHostController
 ){
-    navController.popBackStack(com.sample.prak6.navigasi.Formulir.name, inclusive = false)
+    navController.popBackStack(com.sample.prak6_tugas..navigasi.Formulir.name, inclusive = false)
 }
