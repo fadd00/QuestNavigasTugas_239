@@ -2,9 +2,14 @@ package com.sample.prak6_tugas.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -53,7 +58,7 @@ fun TampilData(
             verticalArrangement = Arrangement.spacedBy(
                 space = dimensionResource(id = R.dimen.padding_small)
             )
-        ){
+        ) {
             items.forEach { item ->
                 Column {
                     Text(
@@ -69,8 +74,21 @@ fun TampilData(
                     HorizontalDivider(thickness = 1.dp, color = Color.Cyan)
                 }
             }
+            Spacer(modifier = Modifier.height(height = 20.dp))
+            Button(
+                modifier = Modifier.fillMaxWidth(),
+                onClick = OnBackBtnClick
+            ) {
+                Text(text = "Kembali")
+            }
+            Spacer(modifier = Modifier.height(height = 10.dp))
+            OutlinedButton(
+                modifier = Modifier.fillMaxWidth(),
+                onClick = onBackToHomeClick
+            ) {
+                Text(text = "Home")
+            }
         }
-
         }
 
     }
