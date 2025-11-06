@@ -103,6 +103,7 @@ fun HomePage(
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold
                 )
+            }
         }
     }
 }
