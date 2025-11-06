@@ -121,6 +121,25 @@ fun FormDataDiri(
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.align(Alignment.Start)
             )
+            Column(modifier = Modifier.fillMaxWidth()) {
+                statusKawin.forEach { item ->
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .selectable(
+                                selected = textSP == item,
+                                onClick = { textSP = item }
+                            ),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = textSP == item,
+                            onClick = { textSP = item }
+                        )
+                        Text(text = item)
+                    }
+                }
+            }
         }
     }
 }
