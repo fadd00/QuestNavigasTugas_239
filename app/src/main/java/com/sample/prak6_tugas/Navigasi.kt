@@ -36,8 +36,25 @@ fun DataApp(
                     }
                 )
             }
+            composable(route = com.sample.prak6.navigasi.Detail.name) {
+                TampilData(
+                    OnBackBtnClick = {
+                        cancelAndBackToFormulir(navController)
+                    },
+                    onBackToHomeClick = {
+                        navController.navigate(com.sample.prak6.navigasi.Home.name) {
+                            popUpTo(com.sample.prak6.navigasi.Home.name) { inclusive = true }
+                        }
+                    }
+                )
+            }
 
         }
 
         }
+}
+private fun cancelAndBackToFormulir(
+    navController: NavHostController
+){
+    navController.popBackStack(com.sample.prak6.navigasi.Formulir.name, inclusive = false)
 }
