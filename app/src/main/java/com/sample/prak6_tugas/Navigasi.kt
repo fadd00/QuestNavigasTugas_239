@@ -29,6 +29,13 @@ fun DataApp(
                     }
                 )
             }
+            composable(route = com.sample.prak6.navigasi.Formulir.name) {
+                FormDataDiri(
+                    onSubmitClick = {
+                        navController.navigate(com.sample.prak6.navigasi.Detail.name)
+                    }
+                )
+            }
 
         }
 
